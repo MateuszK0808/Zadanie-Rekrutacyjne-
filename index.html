@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Zadanie rekrutacyjne</title>
+  <script src="skrypty/angular.min.js"></script>
+  <script src="skrypty/app.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div ng-controller="myController" id="kalkulator">
+    <form>
+      <span id="wynik">{{skladka | currency: "PLN "}}</span>
+      <input type="range" min="100" max="10000" ng-model="wynik.suma" id="suma">
+      <span id="podpis">{{wynik.suma}}</span>
+    <div id="szkoda">
+      <input type="checkbox" ng-model="wynik.szkoda">
+      Bezszkodowe Ubezpieczenie
+    </div>
+    <div id="raty">Raty</div>
+      <select ng-model="wynik.rata" required>
+        <option value="1">Płatność jednorazowa</option>
+        <option selected value="2">Dwie raty</option>
+        <option value="4">Cztery raty</option>
+      </select>
+    <button type="button" ng-click="submit()">Oblicz</button>
+  </form>
+  </div>
+</body>
+</html>
