@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
   <title>Zadanie rekrutacyjne</title>
   <script src="skrypty/angular.min.js"></script>
   <script src="skrypty/app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_mobile.css">
 </head>
 <body>
   <div ng-controller="myController" id="kalkulator">
+    <h1>Kalkulator</h1>
     <form>
-      <span id="wynik">{{skladka | currency: "PLN "}}</span>
+    <div id="sumaUbezpieczen">
+      <h2>Suma ubezpieczeń</h2>
       <input type="range" min="100" max="10000" ng-model="wynik.suma" id="suma">
-      <span id="podpis">{{wynik.suma}}</span>
-    <div id="szkoda">
-      <input type="checkbox" ng-model="wynik.szkoda">
-      Bezszkodowe Ubezpieczenie
+      <span class="granica">100</span>
+      <span class="granica">10000</span>
+      <span id="kontyner">
+        <span class="strzalka"></span>
+        <span id="podpis">{{wynik.suma}}</span>
+        <span class="strzalka"></span>
+      </span>
+      <span class="granica">10000</span>
     </div>
-    <div id="raty">Raty</div>
-      <select ng-model="wynik.rata" required>
-        <option value="1">Płatność jednorazowa</option>
-        <option selected value="2">Dwie raty</option>
-        <option value="4">Cztery raty</option>
-      </select>
-    <button type="button" ng-click="submit()">Oblicz</button>
+    <div id="raty">
+      <h2>Ilość rat</h2>
+      <input type="radio" ng-model="wynik.rata" value="1" name="rata" id="jedna">
+      <label for="jedna">1 rata</label>
+      <input type="radio" ng-model="wynik.rata" value="2" name="rata" id="dwie" ng-checked="true">
+      <label for="dwie">2 raty</label>
+      <input type="radio" ng-model="wynik.rata" value="3" name="rata" id="trzy">
+      <label for="trzy">3 raty</label>
+      <input type="radio" ng-model="wynik.rata" value="4" name="rata" id="cztery">
+      <label for="cztery">4 raty</label>
+    </div>
+    <div id="szkoda">
+      <h2>Stan</h2>
+      <input type="radio" ng-model="wynik.szkoda" value="brak" name="szkoda" ng-click="unselect()" id="brak" ng-checked = "checked">
+      <label for="brak">brak szkódy</label>
+      <input type="radio" ng-model="wynik.szkoda" value="wyrzadzona" name="szkoda" ng-click="unselect()" id="wyrzadzona" ng-checked = "checked">
+      <label for="wyrzadzona">wyrządzona szkoda</label>
+      <span id="brakWyboru">Brak wyboru oznacza nowego klienta bez przeszłości</span>
+    </div>
+    <div id="obliczRate">
+      <button type="button" ng-click="submit()">OBLICZ RATĘ</button>
+      <span id="wynik">{{skladka}} <span>{{waluta}}</span></span>
+    </div>
   </form>
   </div>
 </body>

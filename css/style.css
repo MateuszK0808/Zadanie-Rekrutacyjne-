@@ -1,71 +1,272 @@
 #kalkulator{
-  margin: auto;
-  border: 5px solid crimson;
-  border-radius: 10px;
-  max-width: 500px;
-  max-height: 600px;
-  background-color: coral;
+  border-radius: 8px;
+  width: 850px;
+  height: 579px;
+  background: linear-gradient(to top, #9dbdc6, #272f32);
+  font-family: 'Source Sans Pro';
+
+}
+
+#kalkulator h1{
+  margin: 0;
+  padding-top: 26px;
+  padding-left: 31px;
+  padding-bottom: 20px;
+  line-height: 18px;
+  font-weight: 300;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+#kalkulator form{
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 848px;
+  height: 512px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 11px 24px 0 rgba(14, 42, 59, 0.25);
+}
+form div{
+  width: 786px;
+  margin-left: 31px;
+  margin-right: 31px;
+}
+
+#sumaUbezpieczen {
+  border-bottom: solid 1px #f1f1f1;
+  height: 135px;
+}
+
+h2{
+  margin: 0;
+  font-weight: 300;
+  font-size: 18px;
+  color: #2c3e50;
+}
+#sumaUbezpieczen h2{
+  padding-top: 38px;
+  padding-bottom: 18px;
+  line-height: 17px;
+
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 786px;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: #9dbdc6;
+  box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35);
+  margin: 0;
+
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 2.5px;
+  -webkit-appearence: none;
+  overflow: hidden;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 11px;
+  width: 11px;
+  border-radius: 11px;
+  box-shadow: -786px 0 0 786px #ff3d2e;
+  background: linear-gradient(86deg, #ff3d2e, #ff252c);
+  -webkit-appearance: none;
+  margin-top: -4px;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 11px;
+  width: 11px;
+  border-radius: 11px;
+  background: linear-gradient(86deg, #ff3d2e, #ff252c);
+  -moz-appearance: none;
+  border-width: 0;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 786px;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: #9dbdc6;
+  box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35);
+  -moz-appearance: none;
+}
+
+input[type="range"]::-moz-range-progress {
+  height: 5px;
+  border-radius: 2.5px;
+  background-color: #ff3d2e;
+}
+
+input[type=range]::-ms-track {
+  width: 786px;
+  height: 3px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+
+}
+input[type=range]::-ms-thumb {
+  height: 11px;
+  width: 11px;
+  border-radius: 11px;
+  background: linear-gradient(86deg, #ff3d2e, #ff252c);
+  border-width: 0;
+}
+
+input[type=range]::-ms-fill-upper {
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: #9dbdc6;
+  box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35);
+}
+
+input[type=range]::-ms-fill-lower {
+  height: 5px;
+  border-radius: 2.5px;
+  background-color: #ff3d2e;
+}
+
+.granica {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #9dbdc6;
+  line-height: 10px;
+}
+.granica:first-of-type{
+  float: left;
+}
+.granica:nth-of-type(2){
+  display: none;
+}
+.granica:last-of-type {
+  display: inline-block;
+  float: right;
+}
+#podpis {
+  margin-top: 10px;
+  margin-left: 385px;
+  margin-right: 287px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff3d2e;
+}
+.strzalka {
+  display: none;
+}
+#raty {
+  margin-bottom: 53px;
+}
+
+#raty h2{
+  margin-top: 29px;
+  line-height: 13px;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  width: 175px;
+  height: 37px;
+  border-radius: 18.5px;
+  background-color: #daeaef;
+  color: #9dbdc6;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 37px;
+  margin-top: 24px;
+}
+
+:checked+label {
+  background: linear-gradient(45deg, #ff3d2e, #ff252c);;
+  box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35);
+  color: #ffffff;
+}
+
+#raty label {
+  margin-left: 0px;
+  margin-right: 25px;
+}
+#raty label:last-of-type {
+  margin-right: 0px;
+}
+
+#szkoda h2 {
+  line-height: 13px;
+}
+
+#szkoda label {
+  margin-left: 0px;
+  margin-right: 25px;
+
+}
+
+#brakWyboru {
+
+  font-size: 14px;
+  color: #9dbdc6;
+
+}
+
+#obliczRate {
+  margin: 39px 0 auto 0;
+  width: 848px;
+  height: 107px;
+  background-color: #e8f3f7;
+  box-shadow: 0px 11px 24px 0 rgba(14, 42, 59, 0.25);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+button {
+  width: 201px;
+  height: 49px;
+  background-color: #daeaef;
+  color: #9dbdc6;
+  border-radius: 24.5px;
+  border-width: 0;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 29px;
+  margin-left: 31px;
+  outline: none;
+}
+
+button:hover {
+  background-image: linear-gradient(45deg, #1f8a70, #bedb39);
+  box-shadow: 0px 5px 6px 0 rgba(252, 67, 73, 0.35);
+  color: #ffffff;
+  text-shadow: 1.4px 1.4px 0 rgba(0, 0, 0, 0.35);
 }
 
 #wynik{
-  display: block;
-  margin: 20px auto auto auto;
-  border: 2px solid crimson;
-  height: 50px;
-  width: 200px;
-  background-color: white;
-  text-align: center;
-  font-size: 30px;
-  font-style: oblique;
-  line-height: 50px;
+ width: 292px;
+ height: 62px;
+ display: inline-block;
+ background-color: #ffffff;
+ box-shadow: 0px 5px 6px 0 rgba(157, 189, 198, 0.35);
+ margin-top: 22px;
+ margin-right: 30px;
+ float: right;
+ font-size: 30px;
+ font-weight: bold;
+ color: #000000;
+ line-height: 62px;
 }
 
-#suma{
-  display: block;
-  margin: 20px auto auto auto;
-  width: 200px;
-}
-
-#podpis{
-  display: block;
-  margin: 10px auto auto auto;
-  height: 20px;
-  width: 100px;
-  text-align: center;
-  line-height: 20px;
-  font-size: 20px;
-  color: white;
-}
-
-#szkoda {
-  margin: 10px auto auto auto;
-  max-width: 300px;
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  font-size: 20px;
-  color: white;
-}
-#raty{
-  margin: 10px auto auto auto;
-  width: 100px
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  font-size: 20px;
-  color: white;
-}
-select{
-  display: block;
-  margin: 10px auto auto auto;
-  width: 100px;
-}
-
-button{
-  display: block;
-  margin: 20px auto 10px auto;
-  width: 100px;
-  height: 20px;
-  background-color: black;
-  color: white;
+#wynik span {
+  font-size: 16px;
 }

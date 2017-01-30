@@ -14,6 +14,7 @@ app.get('/', function(req,res) {
 });
 
 app.post('/', function(req,res) {
+  console.log(req.body)
   kalkulator.zakres(Number(req.body.suma));
   kalkulator.czySzkoda(req.body.szkoda);
   kalkulator.ileRat(Number(req.body.rata));

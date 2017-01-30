@@ -24,12 +24,21 @@ exports.zakres = function (suma){
 };
 
 exports.czySzkoda = function (bezszkodowa){
-  if (bezszkodowa) {
+  if (bezszkodowa==="brak") {
+    console.log("bezszkodowa")
     szkoda = 0.95;
     return szkoda;
   }
-  else
+  else if (bezszkodowa === '')
   {
+    console.log("brak info");
+    szkoda = 1;
+    return szkoda;
+
+  }
+  else if (bezszkodowa === 'wyrzadzona')
+  {
+    console.log("szkodowa")
     szkoda = 1.08;
     return szkoda;
   }
@@ -42,6 +51,10 @@ exports.ileRat = function (ile) {
   }
   else if (ile === 2) {
     rata = 1;
+    return rata;
+  }
+  else if (ile === 3) {
+    rata = 1.02;
     return rata;
   }
   else if (ile === 4) {
