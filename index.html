@@ -5,6 +5,7 @@
   <title>Zadanie rekrutacyjne</title>
   <script src="skrypty/angular.min.js"></script>
   <script src="skrypty/app.js"></script>
+  <link rel="stylesheet" href="css\font-awesome-4.7.0\css\font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style_mobile.css">
@@ -15,14 +16,15 @@
     <form>
     <div id="sumaUbezpieczen">
       <h2>Suma ubezpieczeń</h2>
-      <input type="range" min="100" max="10000" ng-model="wynik.suma" id="suma">
+
+      <input type="range" min="100" max="10000" ng-model="wynik.suma" id="suma" value = {{wynik.suma}}>
       <span class="granica">100</span>
       <span class="granica">10000</span>
-      <span id="kontyner">
-        <span class="strzalka"></span>
+      <div id="kontyner">
+        <span class="strzalka fa fa-angle-left" aria-hidden="true" ng-click = "wynik.suma= wynik.suma -10"></span>
         <span id="podpis">{{wynik.suma}}</span>
-        <span class="strzalka"></span>
-      </span>
+        <span class="strzalka  fa fa-angle-right" aria-hidden="true" ng-click = "wynik.suma= wynik.suma +10"></span>
+      </div>
       <span class="granica">10000</span>
     </div>
     <div id="raty">
